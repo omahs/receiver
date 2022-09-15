@@ -31,6 +31,7 @@ import deployedContracts from "./contracts/hardhat_contracts.json";
 import { Transactor, Web3ModalSetup } from "./helpers";
 import { Home, ExampleUI, Hints, Subgraph } from "./views";
 import { useStaticJsonRPC } from "./hooks";
+import { Launcher, Window } from "@relaycc/receiver";
 
 const { ethers } = require("ethers");
 /*
@@ -423,6 +424,16 @@ function App(props) {
             }
           </Col>
         </Row>
+      </div>
+      <div>
+        <Window />
+        <div style={{ position: "relative" }}>
+          <Launcher
+            style={{ top: "100px" }}
+            wallet={userSigner}
+            peerAddress={"0x45C9a201e2937608905fEF17De9A67f25F9f98E0"}
+          />
+        </div>
       </div>
     </div>
   );
